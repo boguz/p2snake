@@ -15,8 +15,6 @@
     <!-- STYLES -->
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/p2snake.css" />
 
-    <!-- SCRIPTS -->
-    <script src="./scripts/p2snake.js"></script>
 </head>
 <body>
 
@@ -26,19 +24,27 @@
         <div class="lives__row">
             <div class="lives__container lives__container--one">
                 <div class="lives__player">P1</div>
-                <span class="lives__heart"></span>
-                <span class="lives__heart"></span>
-                <span class="lives__heart"></span>
+                <div class="lives__hearts">
+                    <span class="lives__heart"></span>
+                    <span class="lives__heart"></span>
+                    <span class="lives__heart"></span>
+                </div>
             </div>
             <div class="lives__container lives__container--two">
                 <div class="lives__player">P2</div>
-                <span class="lives__heart"></span>
-                <span class="lives__heart"></span>
-                <span class="lives__heart"></span>
+                <div class="lives__hearts">
+                    <span class="lives__heart"></span>
+                    <span class="lives__heart"></span>
+                    <span class="lives__heart"></span>
+                </div>
             </div>
         </div>
         <canvas id="canvas" width="600" height="400"></canvas>
     </div>
     
+    <!-- SCRIPTS -->
+    <script src="./scripts/food.js"></script>
+    <script src="./scripts/snake.js"></script>
+    <script src="./scripts/p2snake.js"></script>
 </body>
 </html>

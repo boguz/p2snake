@@ -10,6 +10,8 @@ html, body {
 
     --color-grey--very-light: #eeeeee;
     --color-grey--very-dark: #333333;
+    --color-player-one: #0091ea;
+    --color-player-two: #43a047;
 }
 
 .container {
@@ -35,12 +37,28 @@ html, body {
 }
 
 .lives__container {
-    width: 100px;
+    width: 110px;
     display: flex;
     justify-content: space-between;
 }
 
+.lives__hearts {
+    width: 72px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.lives__container--one {
+    color: var(--color-player-one);
+}
+
 .lives__container--two {
+    flex-direction: row-reverse;
+    color: var(--color-player-two);
+}
+
+.lives__container--two .lives__hearts {
+    justify-content: flex-end;
     flex-direction: row-reverse;
 }
 
@@ -48,8 +66,14 @@ html, body {
     display: inline-block;
     width: 1em;
     height: 1em;
+    margin: 0 .2em;
     background-image: url(../images/heart.svg);
     background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.lives__heart--show {
+    opacity: 1;
 }
 
 
