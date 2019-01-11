@@ -76,6 +76,13 @@ html, body {
     opacity: 1;
 }
 
+.score__p1 {
+    color: var(--color-player-one);
+}
+
+.score__p2 {
+    color: var(--color-player-two);
+}
 
 #canvas {
     background-color: var(--color-grey--very-dark);

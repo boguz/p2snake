@@ -4,6 +4,9 @@ const ctx = canvas.getContext('2d');
 const startingLives = 3;
 const heartsP1 = document.querySelectorAll('.lives__container--one .lives__heart');
 const heartsP2 = document.querySelectorAll('.lives__container--two .lives__heart');
+const scoreP1 = document.querySelectorAll('.score__p1');
+const scoreP2 = document.querySelectorAll('.score__p2');
+
 
 // VARIABLES
 let livesP1 = startingLives;
