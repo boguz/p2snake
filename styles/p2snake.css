@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P';
+}
+
+html, body {
+    height: 100%;
+
+    --color-grey--very-light: #eeeeee;
+    --color-grey--very-dark: #333333;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-grey--very-dark);
+    background-color: var(--color-grey--very-light);
+}
+
+.title {
+    margin-bottom: 1em;
+    font-size: 24px;
+}
+
+.lives__row {
+    width: 600px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lives__container {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lives__container--two {
+    flex-direction: row-reverse;
+}
+
+.lives__heart {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(../images/heart.svg);
+    background-repeat: no-repeat;
+}
+
+
+#canvas {
+    background-color: var(--color-grey--very-dark);
+}
