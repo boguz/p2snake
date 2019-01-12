@@ -38,8 +38,6 @@ class Snake {
         this.pos.y += this.vel.y * gridSize;
     }
 
-    
-
     update() {
         this.updateDirection();
         this.updatePosition();

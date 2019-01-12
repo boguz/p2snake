@@ -1,6 +1,5 @@
 window.addEventListener('keydown', function(e) {
     // PLAYER ONE
-    console.log(e.keyCode);
     if (e.keyCode === 37 && p1.snake.dir !== "right") {
         p1.snake.dir = "left";
     } else if (e.keyCode === 38 && p1.snake.dir !== "down") {
