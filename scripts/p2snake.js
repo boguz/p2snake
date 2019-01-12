@@ -2,15 +2,15 @@
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 const startingLives = 3;
+const startingScore = 0;
 const heartsP1 = document.querySelectorAll('.lives__container--one .lives__heart');
 const heartsP2 = document.querySelectorAll('.lives__container--two .lives__heart');
-const scoreP1 = document.querySelectorAll('.score__p1');
-const scoreP2 = document.querySelectorAll('.score__p2');
+const scoreP1 = document.querySelector('.score__p1');
+const scoreP2 = document.querySelector('.score__p2');
 
 
 // VARIABLES
-let livesP1 = startingLives;
-let livesP2 = startingLives;
+let p1, p2;
 
 function drawHearts(playerHearts, livesLeft) {
     for (let i = 0; i < startingLives; i++) {
@@ -22,9 +22,21 @@ function drawHearts(playerHearts, livesLeft) {
     }
 }
 
+function updateScores() {
+    console.log("UPDATE");
+    scoreP1.textContent = p1.score;
+    scoreP2.textContent = p2.score;
+}
+
 function gameInit() {
-    drawHearts(heartsP1, livesP1);
-    drawHearts(heartsP2, livesP2);
+    p1 = new Player(startingLives, startingScore);
+    p2 = new Player(startingLives, startingScore);
+
+
+    drawHearts(heartsP1, p1.lives);
+    drawHearts(heartsP2, p2.lives);
+    updateScores();
 }
 
 gameInit();
+
