@@ -7,7 +7,7 @@ const heartsP1 = document.querySelectorAll('.lives__container--one .lives__heart
 const heartsP2 = document.querySelectorAll('.lives__container--two .lives__heart');
 const scoreP1 = document.querySelector('.score__p1');
 const scoreP2 = document.querySelector('.score__p2');
-
+const gridSize = 15;
 
 // VARIABLES
 let p1, p2;
@@ -29,14 +29,26 @@ function updateScores() {
 }
 
 function gameInit() {
-    p1 = new Player(startingLives, startingScore);
-    p2 = new Player(startingLives, startingScore);
-
+    p1 = new Player(startingLives,
+                    startingScore,
+                    "#0091ea",
+                    0,
+                    0,
+                    "right");
+    p2 = new Player(startingLives,
+                    startingScore,
+                    "#43a047",
+                    canvas.width - gridSize,
+                    canvas.clientHeight - gridSize,
+                    "left");
 
     drawHearts(heartsP1, p1.lives);
     drawHearts(heartsP2, p2.lives);
     updateScores();
+
+    p1.draw();
+    p2.draw();
 }
 
 gameInit();
-
+console.log(p1);
