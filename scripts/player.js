@@ -17,4 +17,8 @@ class Player {
     draw() {
         this.snake.draw();
     }
+
+    update() {
+        this.snake.update();
+    }
 }

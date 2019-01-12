@@ -7,10 +7,12 @@ const heartsP1 = document.querySelectorAll('.lives__container--one .lives__heart
 const heartsP2 = document.querySelectorAll('.lives__container--two .lives__heart');
 const scoreP1 = document.querySelector('.score__p1');
 const scoreP2 = document.querySelector('.score__p2');
-const gridSize = 15;
+const gridSize = 15; // in px
+const frameRate = 1 // in frames per second
 
 // VARIABLES
 let p1, p2;
+let lastLoopTime = 0;
 
 function drawHearts(playerHearts, livesLeft) {
     for (let i = 0; i < startingLives; i++) {
@@ -23,7 +25,6 @@ function drawHearts(playerHearts, livesLeft) {
 }
 
 function updateScores() {
-    console.log("UPDATE");
     scoreP1.textContent = p1.score;
     scoreP2.textContent = p2.score;
 }
@@ -34,21 +35,32 @@ function gameInit() {
                     "#0091ea",
                     0,
                     0,
-                    "right");
+                    "down");
     p2 = new Player(startingLives,
                     startingScore,
                     "#43a047",
                     canvas.width - gridSize,
                     canvas.clientHeight - gridSize,
-                    "left");
+                    "up");
 
     drawHearts(heartsP1, p1.lives);
     drawHearts(heartsP2, p2.lives);
     updateScores();
-
     p1.draw();
     p2.draw();
+    loop(Date.now);
+}
+
+function loop(currentTime) {
+    if (currentTime - lastLoopTime > 1000 / frameRate) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        p1.update();
+        p2.update();
+        p1.draw();
+        p2.draw();
+        lastLoopTime = currentTime;
+    }
+    requestAnimationFrame(loop);
 }
 
 gameInit();
-console.log(p1);
