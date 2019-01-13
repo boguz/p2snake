@@ -20,4 +20,9 @@ window.addEventListener('keydown', function(e) {
     } else if (e.keyCode === 83 && p2.snake.dir !== "up") {
         p2.snake.dir = "down";
     }
+
+    // PAUSE BUTTON
+    if (e.keyCode === 80) {
+        togglePause();
+    }
 });

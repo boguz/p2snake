@@ -18,6 +18,10 @@ const p2Color = "#43a047";
 const p1ColorDark = "#076faf";
 const p2ColorDark = "#37773a";
 
+// GAME STATES
+let gameState = 'run';   // run, paused
+let pauseMoment;
+
 // VARIABLES
 let lastLoopTime = 0;
 
@@ -76,7 +80,7 @@ function gameInit() {
 }
 
 function loop(currentTime) {
-    if (currentTime - lastLoopTime > 1000 / frameRate) {
+    if (gameState === 'run' && currentTime - lastLoopTime > 1000 / frameRate) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         p1.update();
         p2.update();
@@ -86,8 +90,30 @@ function loop(currentTime) {
         detectCollisions(p2, p1);
         food.draw();
         lastLoopTime = currentTime;
+    } else if (gameState === 'paused') {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let pauseInterval = Math.floor((Date.now() - pauseMoment) / 500);
+        if(pauseInterval % 2 == 0) {
+            ctx.fillStyle = '#eee';
+        } else {
+            ctx.fillStyle = '#333';
+        }
+        ctx.font = 'normal bold 80px "Press Start 2P"'; 
+        ctx.textAlign = 'center';
+        ctx.fillText("PAUSED", canvas.width / 2 + 10, canvas.height / 2 + 50); 
+
     }
+
     requestAnimationFrame(loop);
+}
+
+function togglePause() {
+    pauseMoment = Date.now();
+    if (gameState === 'run') {
+        gameState = 'paused';
+    } else if (gameState === 'paused') {
+        gameState = 'run';
+    }
 }
 
 function updateScores() {
