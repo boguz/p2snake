@@ -28,6 +28,20 @@ class Food {
 
     draw() {
         ctx.fillStyle = this.color;
-        ctx.fillRect(this.pos.x, this.pos.y, gridSize, gridSize);
+        ctx.beginPath();
+        ctx.arc(this.pos.x + gridSize / 2, this.pos.y + gridSize / 2, gridSize / 2, 0, 2 * Math.PI, false);
+        ctx.fill();
+
+        // prevent food from being created "on top" of snake
+        for (let i = p1.snake.tail.length; i > 0; i--) {
+            if (this.pos.x == p1.snake.tail[i - 1].x && this.pos.y == p1.snake.tail[i - 1].y) {
+                this.randomPosition();
+            }
+        }
+        for (let i = p2.snake.tail.length; i > 0; i--) {
+            if (this.pos.x == p2.snake.tail[i - 1].x && this.pos.y == p2.snake.tail[i - 1].y) {
+                this.randomPosition();
+            }
+        }  
     }
 }

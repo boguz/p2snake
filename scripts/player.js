@@ -1,12 +1,15 @@
 class Player {
-    constructor(lives, score, color, startX, startY, dir) {
+    constructor(name, lives, score, color, colorDark, startX, startY, dir, opponent) {
+        this.name = name;
         this.lives = lives;
         this.score = score;
         this.color = color;
+        this.colorDark = colorDark,
         this.startX = startX;
         this.startY = startY;
-        this.dir = dir
-        this.snake = new Snake(this.startX, this.startY, this.color, this.dir);
+        this.dir = dir;
+        this.opponent = opponent;
+        this.snake = new Snake(this, this.startX, this.startY, this.color, this.colorDark, this.dir);
     }
 
     decreaseLives() {
