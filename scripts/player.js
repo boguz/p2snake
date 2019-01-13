@@ -16,10 +16,6 @@ class Player {
         this.snake.draw(this.startX, this.startY, this.startDir);
     }
 
-    resetSnake() {
-        this.snake.reset();
-    }
-
     update() {
         this.snake.update();
     }
