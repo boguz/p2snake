@@ -63,3 +63,17 @@ html, body {
 #canvas {
     background-color: var(--color-grey--very-dark);
 }
+
+.gitlogo__container {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    opacity: .2;
+    transition: all .25s ease-in-out;
+}
+
+.gitlogo__container:hover {
+    opacity: .5;
+}
