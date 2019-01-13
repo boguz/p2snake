@@ -25,4 +25,9 @@ window.addEventListener('keydown', function(e) {
     if (e.keyCode === 80) {
         togglePause();
     }
+
+    // SPACE BUTTON
+    if (e.keyCode === 32 && gameState === 'gameOver') {
+        gameRestart();;
+    }
 });

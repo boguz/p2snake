@@ -24,6 +24,13 @@ class Snake {
         ctx.fillRect(this.pos.x, this.pos.y, gridSize, gridSize);
     }
 
+    reset(startX, startY, startDir) {
+        this.pos.x = startX;
+        this.pos.y = startY;
+        this.tail = this.pos;
+        this.dir = startDir;
+    }
+
     updateDirection() {
         if (this.dir === "right") {
             this.vel.x = 1;
