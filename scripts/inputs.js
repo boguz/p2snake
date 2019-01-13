@@ -27,7 +27,7 @@ window.addEventListener('keydown', function(e) {
     }
 
     // SPACE BUTTON
-    if (e.keyCode === 32 && gameState === 'gameOver') {
+    if (e.keyCode === 32 && (gameState === 'gameOver' || gameState === 'startScreen')) {
         gameRestart();;
     }
 });

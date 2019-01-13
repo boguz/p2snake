@@ -16,7 +16,7 @@ const p1ColorDark = "#076faf";
 const p2ColorDark = "#37773a";
 
 // GAME STATES
-let gameState = 'run';   // run, paused
+let gameState = 'startScreen';   // run, paused, gameOver, startScreen
 let pauseMoment;
 
 // VARIABLES
@@ -69,7 +69,7 @@ function gameOver(winner) {
 
 function gameRestart() {
     gameInit();
-    gameState = 'run';
+    gameState = 'run';  
 }
 
 function loop(currentTime) {
@@ -106,6 +106,16 @@ function loop(currentTime) {
         ctx.fillStyle = '#eee';
         ctx.font = 'normal bold 16px "Press Start 2P"';
         ctx.fillText('Press SPACE to play again...', canvas.width / 2, 320); 
+    } else if (gameState === 'startScreen') {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = p1.color;
+        ctx.font = 'normal bold 16px "Press Start 2P"'; 
+        ctx.textAlign = 'center';
+        ctx.fillText("P1: [up, right, down, left]", canvas.width / 2, 120); 
+        ctx.fillStyle = p2.color;
+        ctx.fillText("P2: [w, d, s, a]", canvas.width / 2, 160); 
+        ctx.fillStyle = '#eeeeee';
+        ctx.fillText("press SPACE to start", canvas.width / 2, 320); 
     }
 
     requestAnimationFrame(loop);

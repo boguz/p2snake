@@ -16,7 +16,6 @@ function detectCollisions(player, opponent) {
         for (let i = opponent.snake.tail.length - 1; i > 1; i--) {
             if (player.snake.tail[0].x === opponent.snake.tail[i].x &&
                 player.snake.tail[0].y === opponent.snake.tail[i].y) {
-                alert(player.name, "collided into", opponent.name);
                 gameOver(opponent);
             }
         }
