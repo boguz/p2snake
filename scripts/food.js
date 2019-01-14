@@ -1,3 +1,5 @@
+"use strict";
+
 class Food {
     constructor() {
         this.pos = this.randomPosition();

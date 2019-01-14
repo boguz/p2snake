@@ -1,3 +1,5 @@
+"use strict";
+
 function gameStateGameOver() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = '#eee';

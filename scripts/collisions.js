@@ -1,3 +1,5 @@
+"use strict";
+
 function detectCollisions(player, opponent) {
     
     // PLAYER AND FOOD

@@ -1,3 +1,5 @@
+"use strict";
+
 class Player {
     constructor(name, score, color, colorDark, startX, startY, dir, opponent) {
         this.name = name;

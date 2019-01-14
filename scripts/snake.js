@@ -1,3 +1,5 @@
+"use strict";
+
 class Snake {
     constructor(player, startX, startY, color, colorDark, dir) {
         this.player = player;

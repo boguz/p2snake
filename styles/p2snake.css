@@ -60,7 +60,7 @@ html, body {
     color: var(--color-player-two);
 }
 
-#canvas {
+#canvasEl {
     background-color: var(--color-grey--very-dark);
 }
 

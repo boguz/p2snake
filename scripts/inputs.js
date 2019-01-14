@@ -1,3 +1,5 @@
+"use strict";
+
 window.addEventListener('keydown', function(e) {
     // PLAYER ONE
     if (p1.snake.pos.x !== prevP1x || p1.snake.pos.y !== prevP1y) {

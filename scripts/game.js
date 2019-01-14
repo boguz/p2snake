@@ -1,5 +1,7 @@
+"use strict";
+
 // DOCUMENT CONSTANTS
-const canvas = document.querySelector('#canvas');
+const canvas = document.querySelector('#canvasEl');
 const ctx = canvas.getContext('2d');
 const scoreP1 = document.querySelector('.score__p1');
 const scoreP2 = document.querySelector('.score__p2');
